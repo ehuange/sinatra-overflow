@@ -1,0 +1,7 @@
+<div class="comps-container qs-container">
+  <% questions.each do |question| %>
+  <li>
+    <%= erb :'/components/_q-container', locals: { question: question } %>
+  </li>
+  <% end %>
+</div>

@@ -1,0 +1,34 @@
+<div class="comp-container q-container flex-column width-100">
+  <% if @home_page %>
+    <div class="q_votes_answers flex-row width-100">
+      <div class="q_votes"><span><%= question.points %> votes</span></div>
+      <div class="q_answers"><span><%= question.answers.count %> answers</span></div>
+      <h2 class="q_title width-100" style="margin-left: 10px"><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+    </div>
+  <% else %>
+    <h3 class="q_title width-100"><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
+    <div class="q_body_votes flex-row width-100">
+    <%= erb :'/components/_v-container', locals: { comment: nil, answer: nil, question: question } %>
+    <p class="q_body"><%= question.body %></p>
+  </div>
+  <% end %>
+  <div class="flex-row q_tags_questioner width-100">
+    <div class="q_tags">
+    <% if question.tags.length > 0 %>
+    <span class="q_tags-label">Tags: </span>
+    <% end %>
+        <% question.tags.each do |tag| %>
+          <span class="tags">
+          <%= tag.tag %>
+          </span>
+        <% end %>
+    </div>
+    <div class="q_questioner">
+      <span class="q_user">asked by <a href="/users/<%= question.questioner.id %>"><%= question.questioner.username %></a></span>
+      <span class="q_timestamp"> on <%= long_form_date(question.created_at) %></span>
+    </div>
+  <% if !@home_page %>
+  </div>
+  <%= erb :'/components/_cs-container', locals: { comments: question.comments, question: question, answer: nil } %>
+  <% end %>
+</div>

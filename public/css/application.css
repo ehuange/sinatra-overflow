@@ -1,0 +1,283 @@
+/** {
+  border: dashed 1px red;
+}*/
+
+/*===============================*/
+/*========== I. Resets ==========*/
+/*===============================*/
+
+h1, h2, h3, p, body, li, ul, label, input {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+/*======================================*/
+/*========== II. General Tags ==========*/
+/*======================================*/
+
+p {
+  font-size: 1.1em;
+  letter-spacing: 0.02em;
+  line-height: 1.4em;
+}
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 2em;
+  margin: 10px 0;
+}
+h3 {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+a {
+  color: steelblue;
+}
+a:hover {
+  color: lightsteelblue;
+}
+textarea {
+  min-height: 180px;
+}
+
+
+/*==========================================*/
+/*========== III. Styling Classes ==========*/
+/*==========================================*/
+
+.flex-row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.flex-column {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.font-sm {
+  font-size: 1em
+}
+.font-md {
+  font-size: 2em;
+}
+.width-100 {
+  width: 100%;
+}
+
+
+/*============================================*/
+/*========== IV. Structural Classes ==========*/
+/*============================================*/
+
+/* ========== a. Universal ========== */
+.sub-container {
+  margin: 20px 0;
+  max-width: 900px;
+  width: 80%;
+}
+.main-nav-ul, .main-nav-li {
+  height: 100%;
+}
+.main-nav {
+  background-color: lightgray;
+  box-shadow: 0px 2px 2px 0px grey;
+  height: 70px;
+  justify-content: space-between;
+}
+.nav-header {
+  margin-left: 20px;
+}
+.main-nav-link {
+  color: black;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.main-nav-link:hover {
+  color: black;
+}
+.main-nav-li:hover {
+  background-color: silver;
+}
+.main-nav-li {
+  padding: 0 20px;
+  transition: background 0.1s linear;
+}
+.question-button {
+  background-color: #f4b541;
+  border-radius: 15px;
+  border: solid dimgrey 2px;
+  box-shadow: 0 2px 2px 0 darkgrey;
+  color: black;
+  margin-right: 20px;
+  padding: 5px;
+  transition: background 0.1s linear;
+}
+.question-button:hover {
+  background-color: #f4aa42;
+}
+.comp-container {
+  border: solid 1px lightgrey;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.comps-container>* {
+  margin: 15px 0;
+}
+h3.q_title {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.sort-buttons>* {
+  margin: 0 10px;
+}
+a.submit-buttons, button.submit-buttons, input.submit-buttons {
+  width: 120px;
+  background-color: whitesmoke;
+  color: steelblue;
+  border: solid 1px steelblue;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 2px lightgrey;
+}
+
+a.submit-buttons:hover, button.submit-buttons:hover, input.submit-buttons:hover {
+  background-color: lightsteelblue;
+} 
+
+
+/* ========== a. Component-specific ========== */
+
+/* Flex etc. */
+/* ~~~~~~~~~~~~~~~ */
+.a-form, .a-form-container, .cs-container, .c-form, .c-form-container, .q-form {
+  align-items: flex-start;
+}
+.q_tags_questioner, .q_title-form {
+  justify-content: space-between;
+}
+.q_body_votes, .a_votes_body {
+  justify-content: flex-start;
+}
+.a_answerer {
+  justify-content: flex-end;
+}
+.c_timestamp, .a_timestamp {
+  margin-left: 5px;
+}
+
+
+/* Questions */
+/* ~~~~~~~~~~~~~~~ */
+.q_votes, .q_answers {
+  background-color: lightgrey;
+  margin: 0 5px;
+  padding: 5px;
+  text-align: center;
+}
+.q_tags {
+  margin: 10px 0;
+}
+.tags {
+  background-color: lightsteelblue;
+  margin-left: 5px;
+  padding: 7px;
+  border-radius: 3px;
+}
+.q-form>* {
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Answers */
+/* ~~~~~~~~~~~~~~~ */
+.a-form-container, .c-form-container {
+  border: solid 1px grey;
+  background-color: whitesmoke;
+  margin: 10px 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.a-form-button {
+  align-self: center;
+}
+.a-form>*, .c-form>* {
+  margin: 10px 0;
+}
+.edit-answer {
+  display: inline-block;
+  text-align: center;
+}
+.delete-answer {
+  display: inline-block;
+}
+.best-answer-form {
+  display: inline-block;
+}
+
+
+
+/* Votes */
+/* ~~~~~~~~~~~~~~~ */
+.downvote, .upvote {
+  line-height: 0;
+  margin: 0 15px 0 0;
+}
+.votes {
+  margin: 0 15px 0 0;
+}
+.upvote-button, .downvote-button {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  border: none;
+  background-color: white;
+}
+.upvote-button:hover, .downvote-button:hover {
+  color: red;
+}
+
+/* Comments */
+/* ~~~~~~~~~~~~~~~ */
+
+.c_votes_body {
+  justify-content: flex-start
+}
+.c_commenter {
+  justify-content: flex-end;
+}
+
+/* Users */
+/* ~~~~~~~~~~~~~~~ */
+.u-form {
+  border: solid 1px black;
+  width: 400px;
+  padding: 20px 0;
+}
+.u-form>* {
+  margin: 10px 0;
+}
+
+.home-questions-right {
+  margin-left: 15px;
+}
+div.answer-show {
+  display: inline-block;
+  float: left;
+}
+.bad-answer {
+  opacity: 0.5;
+}

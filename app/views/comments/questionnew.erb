@@ -1,0 +1,7 @@
+<h1><%= @question.title %></h1>
+<h3><%= @question.body %></h3>
+
+<form action="/questions/<%= @question.id %>/comments" method="POST">
+  <textarea rows="3" cols="40" name="body" placeholder="Enter comment..."></textarea>
+  <input type="submit">
+</form>

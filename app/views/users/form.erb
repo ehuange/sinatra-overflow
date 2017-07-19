@@ -1,0 +1,21 @@
+<div class="sub-container flex-column">
+
+  <% if logged_in? %>
+    <h1>Edit Uour Information</h1>
+  <% else %>
+    <h1>Log In</h1>
+  <% end %>
+
+  <% if logged_in? %>
+    <form class="u-form flex-column" action="/users/<%= user.id %>" method="post">
+    <input type="hidden" name="_method" value="put" />
+  <% else %>
+    <form class="u-form flex-column" action="/users/login" method="post">
+  <% end %>
+
+  <%= erb :'users/_fieldsets', locals: { user: @user } %>
+
+    <input class="submit-buttons" type="submit" value="Submit">
+  </form>
+
+</div>

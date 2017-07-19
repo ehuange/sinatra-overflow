@@ -1,0 +1,9 @@
+<div class="v-container flex-column">
+  <% if comment %>
+    <%= erb :'/components/_v-form', locals: { action: "/questions/#{comment.commentable_id}/comments/#{comment.id}", votable: comment } %>
+  <% elsif question %>
+    <%= erb :'/components/_v-form', locals: { action: "/questions/#{question.id}", votable: question } %>
+  <% elsif answer %>
+    <%= erb :'/components/_v-form', locals: { action: "/questions/#{answer.question.id}/answers/#{answer.id}", votable: answer } %>
+  <% end %>
+</div>

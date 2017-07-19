@@ -1,0 +1,23 @@
+<div class="sub-container flex-column">
+
+  <h1>Questions</h1>
+
+  <div class="sort-buttons flex-row">
+    <button class="most-recent-tab submit-buttons">Most Recent</button>
+    <button class="highest-vote-tab submit-buttons">Most Upvoted</button>
+    <button class="trending-tab submit-buttons">Trending</button>
+  </div>
+
+  <ul class="sorted-qs by-most-recent">
+    <%= erb :'/components/_qs-container', locals: { questions: questions_by_most_recent} %>
+  </ul>
+
+  <ul class="sorted-qs by-highest-vote">
+    <%= erb :'/components/_qs-container', locals: { questions: questions_by_highest_vote } %>
+  </ul>
+
+  <ul class="sorted-qs by-trending">
+    <%= erb :'/components/_qs-container', locals: { questions: questions_by_trending } %>
+  </ul>
+
+</div>

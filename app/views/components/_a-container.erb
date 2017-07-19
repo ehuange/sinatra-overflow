@@ -1,0 +1,39 @@
+<div class="comp-container a-container width-100">
+  <div class="a_votes_body flex-row width-100">
+    <%= erb :'/components/_v-container', locals: { comment: nil, answer: answer, question: nil } %>
+    <% if answer.bad_answer? %>
+      <p class="a_body bad-answer"><%= answer.body %></p>
+    <% else %>
+      <p class="a_body"><%= answer.body %></p>
+    <% end %>
+    </div>
+  <div class="a_answerer flex-row width-100">
+    <span class="a_user">answered by <a href="users/<%= answer.answerer.id %>"><%= answer.answerer.username %></a></span>
+    <span class="a_timestamp">on <%= long_form_date(answer.created_at) %></span>
+  </div>
+  <% if session[:id] == answer.question.questioner.id %>
+    <form class="best-answer-form flex-row" action="/questions/<%= answer.question.id %>/answers/<%= answer.id %>/bestanswer" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input class="submit-buttons" type="submit" value="Best answer">
+    </form>
+  <% end %>
+  <% if logged_in? && session[:id] == answer.answerer.id %>
+    <ul>
+      <li class="edit-answer">
+        <a class="edit-answer submit-buttons" href="/questions/<%= answer.question.id %>/answers/<%= answer.id %>/edit">Edit Answer</a>
+      </li>
+      <li class="delete-answer">
+        <form class="delete-answer" method="post" action="/questions/<%= answer.question.id %>/answers/<%= answer.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <input class="submit-buttons" type="submit" value="Delete Answer">
+        </form>
+      </li>
+    </ul>
+  <% end %>
+  <% if answer.best_answer? %>
+      <img class='answer-image' src='http://clipartix.com/wp-content/uploads/2016/04/Thumbs-up-clipart-2.png' width=30 height=30>
+    </div>
+  <% end %>
+
+  <%= erb :'/components/_cs-container', locals: { comments: answer.comments, question: nil, answer: answer } %>
+</div>

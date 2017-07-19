@@ -1,0 +1,3 @@
+<h3><%= @answer.body %></h3>
+
+<%= erb :'_answercomment', layout: false, locals: {answer: @answer, comment: @comment} %>

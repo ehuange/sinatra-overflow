@@ -1,0 +1,14 @@
+<div class="u-form-fieldset fieldset">
+  <label for="name_input">Username:</label><br>
+  <input class="width-100" id="name" type="text" name="user[username]" value="<%= user.try(:username) %>">
+</div>
+
+<div class="u-form-fieldset fieldset">
+  <label for="email_input">Email:</label><br>
+  <input class="width-100" id="email" type="text" name="user[email]" value="<%= user.try(:email) %>">
+</div>
+
+<div class="u-form-fieldset fieldset">
+  <label for="password_input ">Password:</label><br>
+  <input class="width-100" id="password" type="text" name="user[password]" placeholder="************">
+</div>

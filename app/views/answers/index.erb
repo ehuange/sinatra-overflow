@@ -1,0 +1,16 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+  <div class="votes"><%= @question.points %></div>
+  <div>votes</div>
+<span><%= "Asked by #{@question.questioner} on #{long_form_date(@question.created_at)}" %></span>
+
+
+<main role="main">
+  <ul class="no-bullets">
+    <% @answers.each do |answer| %>
+      <div class="votes"><%= answer.points %></div>
+      <div>votes</div>
+      <%= erb :'answers/_show', locals: {question: @question, answer: answer} %>
+    <% end %>
+  </ul>
+</main>

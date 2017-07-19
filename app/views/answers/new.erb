@@ -1,0 +1,11 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+<span><%= "Asked by #{@question.questioner} on #{long_form_date(@question.created_at)}" %></span>
+
+<div>
+<form method="post" action="/questions/<%= @question.id %>/answers">
+  <label for="body-textarea">Reply:</label>
+  <textarea id="body-textarea" name="answer[body]"></textarea>
+  <input type="submit" value="Respond">
+</form>
+</div>

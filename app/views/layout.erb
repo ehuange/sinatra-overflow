@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>DBC Overflow</title>
+</head>
+<body>
+
+  <header role="banner"
+    <nav class="main-nav flex-row">
+      <h3 class="nav-header font-md">dbc overflow</h3>
+      <ul class="main-nav-ul flex-row font-sm">
+        <% if logged_in? %>
+          <a href="/users/<%= session[:id] %>" class="main-nav-link"><li class="main-nav-li flex-row"><%= User.find(session[:id]).username %></li></a>
+          <a href="/users/logout" class="main-nav-link"><li class="main-nav-li flex-row">Logout</li></a>
+        <% else %>
+          <a href="/users/new" class="main-nav-link"><li class="main-nav-li flex-row"><span>Register</span></li></a>
+          <a href="/users/login" class="main-nav-link"><li class="main-nav-li flex-row"><span>Login</span></li></a>
+        <% end %>
+        <a href="/" class="main-nav-link"><li class="main-nav-li
+        flex-row"><span>Home</span></li></a>
+        <a href="/questions/new"><button class="question-button">Ask a Question</button></a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-container flex-column width-100">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div class="comp-container c-container flex-column width-100">
+  <div class="c_votes_body flex-row width-100">
+    <%= erb :'/components/_v-container', locals: { comment: comment, answer: nil, question: nil } %>
+    <p class="c_body"><%= comment.body %></p>
+  </div>
+  <div class="c_commenter flex-row width-100">
+    <span class="c_user">made by <a href="user/<%= comment.user.id %>"><%= comment.user.username %></a> </span>
+    <span class="c_timestamp">on <%= long_form_date(comment.created_at) %></span>
+  </div>
+</div>

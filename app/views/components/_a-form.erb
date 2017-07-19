@@ -1,0 +1,10 @@
+<% if logged_in? && question.questioner.id != session[:id] %>
+<div class="a-form-container flex-column width-100">
+    <button class="a-form-button submit-buttons" type="submit">Answer this question</button>
+  <form class="a-form flex-column width-100" action="/questions/<%= question.id %>/answers" method="post">
+    <label for="body-textarea">Reply:</label>
+    <textarea class="width-100" id="body-textarea" name="answer[body]"></textarea>
+    <input class="submit-buttons" type="submit" value="Respond">
+  </form>
+</div>
+<% end %>

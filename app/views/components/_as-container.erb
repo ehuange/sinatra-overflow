@@ -1,0 +1,5 @@
+<div class="comps-container as-container flex-column width-100">
+  <% answers.each do |answer| %>
+    <%= erb :'/components/_a-container', locals: {answer: answer} %>
+  <% end %>
+</div>

@@ -1,0 +1,5 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+<span><%= "Asked by #{@question.questioner} on #{long_form_date(@question.created_at)}" %></span>
+
+<%= erb :'/answers/_edit', locals: {question: @question, answer: @answer}%>

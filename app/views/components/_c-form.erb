@@ -1,0 +1,9 @@
+<% if logged_in? %>
+<div class="c-form-container flex-column width-100">
+    <a id="answer-comment-link" href="<%= action %>/comments/new">Comment on this <%= commentable.class %></a>
+  <form class="c-form flex-column width-100" action="<%= action %>/comments" method="POST">
+    <textarea class="width-100" name="body" placeholder="Enter comment..."></textarea>
+    <input class="submit-buttons" type="submit">
+  </form>
+</div>
+<% end %>

@@ -1,0 +1,9 @@
+<div>
+<form class="edit-answer" method="post" action="/questions/<%= question.id %>/answers/<%= answer.id %>">
+  <input type="hidden" name="_method" value="put">
+  <label for="body-textarea">Reply:</label>
+  <textarea id="body-textarea" name="answer[body]"><%= answer.try(:body) %></textarea>
+  <input type="submit" value="Update">
+</form>
+<span><%= "Answered by #{answer.answerer.username} on #{long_form_date(answer.created_at)}" %></span>
+</div>

@@ -1,0 +1,10 @@
+<div class="sub-container">
+
+  <%= erb :'/components/_q-container', locals: {question: question} %>
+  <%= erb :'/components/_a-form', locals: {question: question} %>
+  <h2>Answers</h2>
+  <ul class="question-answers">
+    <%= erb :'/components/_as-container', locals: { answers: answers_by_highest(question.answers) } %>
+  </ul>
+
+</div>

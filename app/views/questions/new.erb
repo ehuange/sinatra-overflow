@@ -1,0 +1,10 @@
+<div class="sub-container flex-column">
+  <h2>Ask a question</h2>
+  <form class="q-form flex-column width-100" action="/questions" method="POST" id="questionform">
+    <label for="title">Title</label>
+    <input type="text width-100" name="title" placeholder="Enter question title">
+    <textarea class="width-100" rows="10" cols="50" name="body" form="questionform" placeholder="Enter question here"></textarea>
+    <input type="text" name="tags" placeholder="Enter tags seperated by comma">
+    <input class="submit-buttons" type="submit">
+  </form>
+</div>
