@@ -13,7 +13,7 @@ A simple Stack Overflow clone built on Sinatra. Built with :heart: in collaborat
 ## Functionality
 
 ### Sorting Questions
-Visitors can sort questions on the home page, based on a few filters. Questions have tags. | 
+Users can sort questions on the home page, based on a few filters. Questions have tags. | 
 ------------------------------ | 
 ![Sorting Questions](https://github.com/pnewsam/sinatra-overflow/blob/master/readme_assets/sorting_questions.gif "Sorting Questions") |
 
@@ -23,7 +23,7 @@ Users can register for an account, and then log in. Once they're logged in, they
 ![Registering](https://github.com/pnewsam/sinatra-overflow/blob/master/readme_assets/registering.gif "Registering") |
 
 ### Asking Questions
-User can ask questions. |
+Users can ask questions. |
 ------------------------------ |
 ![Asking Questions](https://github.com/pnewsam/sinatra-overflow/blob/master/readme_assets/asking_questions.gif "Asking Questions") |
 
