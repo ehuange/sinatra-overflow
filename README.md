@@ -5,7 +5,7 @@ A simple Stack Overflow clone built on Sinatra. Built with :heart: in collaborat
 
 ### Details
 * Employs the MVC model.
-* Makes heavy use of ERB templating & jQuery AJAX.
+* Makes heavy use of ERB templating, jQuery AJAX, and CSS Flexbox.
 * ___Ruby Version___: 2.2.2
 * ___Database___: PostgreSQL  
 * ___Dependencies___: BCrypt, Faker, Shotgun
